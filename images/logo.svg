@@ -1,0 +1,81 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f2ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7d00ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff006e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7d00ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer glow circle -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#00f2ff" stroke-width="2" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Circuit pattern around circle -->
+  <g stroke="#00f2ff" stroke-width="1" opacity="0.5" filter="url(#glow)">
+    <!-- Top circuits -->
+    <line x1="100" y1="15" x2="100" y2="35"/>
+    <circle cx="100" cy="20" r="2" fill="#00f2ff"/>
+    
+    <line x1="70" y1="30" x2="85" y2="40"/>
+    <circle cx="75" cy="32" r="1.5" fill="#00f2ff"/>
+    
+    <line x1="130" y1="30" x2="115" y2="40"/>
+    <circle cx="125" cy="32" r="1.5" fill="#00f2ff"/>
+    
+    <!-- Side circuits -->
+    <line x1="25" y1="100" x2="50" y2="100"/>
+    <circle cx="30" cy="100" r="2" fill="#00f2ff"/>
+    
+    <line x1="150" y1="100" x2="175" y2="100"/>
+    <circle cx="170" cy="100" r="2" fill="#00f2ff"/>
+    
+    <!-- Bottom circuits -->
+    <line x1="65" y1="160" x2="80" y2="155"/>
+    <circle cx="70" cy="158" r="1.5" fill="#00f2ff"/>
+    
+    <line x1="135" y1="160" x2="120" y2="155"/>
+    <circle cx="130" cy="158" r="1.5" fill="#00f2ff"/>
+  </g>
+  
+  <!-- Mountain outline -->
+  <path d="M 50 140 L 100 50 L 150 140 Z" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" filter="url(#glow)"/>
+  
+  <!-- Left mountain fill with gradient -->
+  <path d="M 50 140 L 100 50 L 100 140 Z" fill="url(#mountainGradient2)" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Right mountain fill with gradient -->
+  <path d="M 100 50 L 150 140 L 100 140 Z" fill="url(#mountainGradient)" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Lightning bolt in center -->
+  <g fill="#00f2ff" filter="url(#glow)">
+    <path d="M 105 75 L 90 105 L 100 105 L 95 135 L 115 95 L 105 95 Z" opacity="0.95"/>
+  </g>
+  
+  <!-- Circuit lines on mountains -->
+  <g stroke="#00f2ff" stroke-width="1" opacity="0.6" filter="url(#glow)" stroke-linecap="round">
+    <line x1="75" y1="85" x2="125" y2="85"/>
+    <line x1="80" y1="95" x2="120" y2="95"/>
+    <line x1="85" y1="105" x2="115" y2="105"/>
+    <line x1="90" y1="115" x2="110" y2="115"/>
+  </g>
+  
+  <!-- Connection points -->
+  <g fill="#00f2ff" opacity="0.7" filter="url(#glow)">
+    <circle cx="100" cy="85" r="1.2"/>
+    <circle cx="95" cy="100" r="1.2"/>
+    <circle cx="105" cy="110" r="1.2"/>
+    <circle cx="100" cy="125" r="1.2"/>
+  </g>
+</svg>
