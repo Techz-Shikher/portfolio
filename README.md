@@ -4,10 +4,7 @@ This repository contains my personal developer portfolio website.
 It showcases my projects, skills, and experience as a software developer using a clean, modern, and responsive design.
 
 ## 🚀 Live Demo
-🔗 https://<your-username>.github.io/Portfolio/
-
-> Replace `<your-username>` with your GitHub username  
-> Example: https://techz-shikher.github.io/Portfolio/
+https://techz-shikher.github.io/portfolio/
 
 ## 🧩 Features
 - Modern and responsive UI
