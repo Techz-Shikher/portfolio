@@ -22,14 +22,15 @@ https://techz-shikher.github.io/portfolio/
 
 ## 📁 Project Structure
 Portfolio/
-||├── -index.html
-||├── -css/
-||│ └── -style.css
-||├── -js/
-||│ └── -script.js
-||├── -assets/
-||│ └── -images/
-||└── -README.md
+│
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── assets/
+│   └── images/
+└── README.md
 
 
 
