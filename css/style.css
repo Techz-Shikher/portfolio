@@ -742,6 +742,36 @@ section {
   font-family: 'Space Mono', monospace;
 }
 
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, rgba(0, 242, 255, 0.1) 0%, rgba(0, 242, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 8px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.cert-link:hover {
+  background: linear-gradient(135deg, rgba(0, 242, 255, 0.2) 0%, rgba(0, 242, 255, 0.1) 100%);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 242, 255, 0.3);
+  transform: translateX(5px);
+}
+
+.cert-link i {
+  font-size: 1rem;
+}
+
 /* EDUCATION SECTION */
 .education-section {
   background: linear-gradient(135deg, rgba(11, 11, 11, 0.5) 0%, rgba(26, 26, 46, 0.5) 100%);
