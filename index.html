@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shikher Singh | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Typed -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+
+<!-- 3D Background Container (Low Z-index) -->
+<div id="three-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+<header>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  
+  <a href="#home" class="logo-link">
+    <div class="logo">
+      <img src="images/logo.png" alt="Shikher Singh" class="logo-image">
+    </div>
+  </a>
+  <nav class="nav-menu">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#certifications" class="nav-link">Certifications</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#profiles" class="nav-link">Profiles</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+    <i class="fas fa-moon"></i>
+  </button>
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home" style="position: relative; z-index: 1;">
+  <div class="hero-content">
+    <div class="hero-greeting" data-aos="fade-up">
+      <p>Welcome to my portfolio</p>
+    </div>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+      Hi, I'm <span class="gradient-text">Shikher Singh</span>
+    </h1>
+    <h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+      <span id="typed"></span>
+    </h2>
+    <p class="hero-desc" data-aos="fade-up" data-aos-delay="300">Java Developer focused on clean frontend, backend & real-world systems.</p>
+
+    <div class="buttons" data-aos="fade-up" data-aos-delay="400">
+      <a href="#projects" class="btn btn-primary">
+        <i class="fas fa-arrow-right"></i>
+        View Projects
+      </a>
+      <a href="/resume/RESUME.pdf" class="btn btn-secondary" download>
+        <i class="fas fa-download"></i>
+        Resume
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="400">
+    <span>Scroll to explore</span>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section id="about" class="about-section">
+  <!-- Animated background elements -->
+  <div class="about-bg-elements">
+    <div class="glow-orb about-orb-1"></div>
+    <div class="glow-orb about-orb-2"></div>
+  </div>
+
+  <div class="section-header" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Get to know the developer behind the code</p>
+  </div>
+
+  <div class="about-container">
+    <!-- About Content -->
+    <div class="about-content" data-aos="fade-right">
+      <div class="about-card">
+        <h3 class="about-title">Who I Am</h3>
+        <p class="about-text">
+          I'm a passionate <strong>Full Stack Developer</strong> from Greater Noida, India, currently pursuing B.Tech in Computer Science & Engineering at Galgotias University. With a CGPA of 8.54, I'm committed to excellence in both academics and practical development.
+        </p>
+        <p class="about-text">
+          I specialize in building <strong>scalable backend systems</strong>, crafting <strong>intuitive user interfaces</strong>, and solving <strong>complex algorithmic problems</strong>. My journey in tech has been driven by curiosity, continuous learning, and a passion for creating solutions that matter.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <h3 class="about-title">What I Do</h3>
+        <p class="about-text">
+          I develop <strong>end-to-end applications</strong> using modern technologies. From designing robust databases to creating responsive frontends, I bring ideas to life with clean, maintainable code. I'm particularly interested in backend optimization, system design, and building real-world applications.
+        </p>
+        <p class="about-text">
+          Beyond coding, I actively contribute to the developer community, solve algorithmic challenges on LeetCode, and continuously expand my technical expertise through certifications and hands-on projects.
+        </p>
+      </div>
+
+      <div class="about-stats">
+        <div class="about-stat" data-aos="zoom-in" data-aos-delay="0">
+          <div class="stat-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">4+</div>
+            <div class="stat-name">Projects</div>
+          </div>
+        </div>
+        <div class="about-stat" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">17+</div>
+            <div class="stat-name">Certifications</div>
+          </div>
+        </div>
+        <div class="about-stat" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">8.54</div>
+            <div class="stat-name">CGPA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cta" data-aos="fade-up" data-aos-delay="300">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-project-diagram"></i>
+          Explore My Work
+        </a>
+        <a href="/resume/RESUME.pdf" class="btn btn-secondary" download>
+          <i class="fas fa-file-pdf"></i>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- About Highlights -->
+    <div class="about-highlights" data-aos="fade-left">
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h4>Full Stack Development</h4>
+        <p>Backend with Java, Frontend with modern frameworks, Database optimization</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-puzzle-piece"></i>
+        </div>
+        <h4>Problem Solving</h4>
+        <p>DSA expertise, algorithmic thinking, competitive coding practice</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h4>Innovation & Growth</h4>
+        <p>Continuous learning, exploring new technologies, building impactful projects</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h4>Community Contributor</h4>
+        <p>Active on GitHub, LeetCode, and GeeksforGeeks, sharing knowledge</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (FEATURED) -->
+<section id="gallery" class="gallery-section gallery-featured" style="position: relative; z-index: 2;">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Gallery</h2>
+    <p>Visual showcase of projects and achievements</p>
+  </div>
+
+  <div class="gallery-container">
+    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="0">
+      <div class="gallery-image">
+        <img src="images/gallery-1.jpg" alt="Pitch-O-Mania">
+        <div class="gallery-overlay">
+          <h3>Pitch-O-Mania</h3>
+          <p>Innovation Pitch Event</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="50" id="gallery-item-2">
+      <div class="gallery-image">
+        <img src="images/gallery-2.jpg" alt="AMCAT WorkShop by Rakhi Ma'am">
+        <div class="gallery-overlay">
+          <h3>AMCAT WorkShop</h3>
+          <p>by Rakhi Ma'am</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+      <div class="gallery-image">
+        <img src="images/gallery-3.jpg" alt="GFG Celebration">
+        <div class="gallery-overlay">
+          <h3>Celebration with Aman Gupta Sir</h3>
+          <p>GeeksforGeeks Event</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- STATS SECTION -->
+<section class="stats-section" style="position: relative; z-index: 2;">
+  <div class="stats-container">
+    <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="stat-number" data-target="15">4</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="stat-number" data-target="25">17</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+    
+    <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="stat-number" data-target="8">7</div>
+      <div class="stat-label">Tech Skills</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills-section" style="position: relative; z-index: 2;">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Technical Skills</h2>
+    <p>Technologies and tools I work with</p>
+  </div>
+  
+  <div class="skills-container">
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="0">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fab fa-java"></i></div>
+      </div>
+      <span>Java</span>
+    </div>
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="50">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+      </div>
+      <span>JDBC</span>
+    </div>
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+      </div>
+      <span>MySQL</span>
+    </div>
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fas fa-server"></i></div>
+      </div>
+      <span>Servlets</span>
+    </div>
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+      </div>
+      <span>HTML</span>
+    </div>
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+      </div>
+      <span>CSS</span>
+    </div>
+    <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+      <div class="skill-icon-wrapper">
+        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+      </div>
+      <span>JavaScript</span>
+    </div>
+  </div>
+
+  <!-- Skill Proficiency Bars -->
+  <!-- REMOVED: Skill Proficiency Bars Section -->
+
+  <!-- Tech Stack Carousel -->
+  <div class="tech-carousel" data-aos="fade-up">
+    <h3 class="carousel-title">Tech Stack Specialization</h3>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- First Set -->
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-java"></i></div>
+          <span>Core Java</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-database"></i></div>
+          <span>JDBC</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-server"></i></div>
+          <span>Servlets</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-globe"></i></div>
+          <span>JSP</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-database"></i></div>
+          <span>MySQL</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-html5"></i></div>
+          <span>HTML5</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-css3-alt"></i></div>
+          <span>CSS3</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-js-square"></i></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-layer-group"></i></div>
+          <span>UI</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <span>UX</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-desktop"></i></div>
+          <span>Interface</span>
+        </div>
+        <!-- Duplicate Set for Seamless Loop -->
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-java"></i></div>
+          <span>Core Java</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-database"></i></div>
+          <span>JDBC</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-server"></i></div>
+          <span>Servlets</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-globe"></i></div>
+          <span>JSP</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-database"></i></div>
+          <span>MySQL</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-html5"></i></div>
+          <span>HTML5</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-css3-alt"></i></div>
+          <span>CSS3</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-js-square"></i></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-layer-group"></i></div>
+          <span>UI</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <span>UX</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-desktop"></i></div>
+          <span>Interface</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Featured Projects</h2>
+    <p>Crafted with precision and clean code</p>
+  </div>
+
+  <!-- Project Filter -->
+  <div class="project-filters" data-aos="fade-up">
+    <button class="filter-btn active" data-filter="all">
+      <i class="fas fa-th"></i>
+      <span>All Projects</span>
+    </button>
+    <button class="filter-btn" data-filter="java">
+      <i class="fas fa-coffee"></i>
+      <span>Java</span>
+    </button>
+    <button class="filter-btn" data-filter="web">
+      <i class="fas fa-globe"></i>
+      <span>Web</span>
+    </button>
+    <button class="filter-btn" data-filter="database">
+      <i class="fas fa-database"></i>
+      <span>Database</span>
+    </button>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- MedConnect (MAIN) -->
+    <div class="project-card-wrapper" data-aos="fade-up" data-category="java">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-hospital-user"></i>
+            </div>
+            <h3>MedConnect</h3>
+            <p class="project-badge">Main Project</p>
+            <p class="project-preview">Complete Hospital Management System with Admin, Doctor & Patient login.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Complete Hospital Management System with Admin, Doctor & Patient login,
+              appointment scheduling, billing, room and ambulance management.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Swing</span>
+              <span class="tech-tag">JDBC</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/MedConnect-1" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CGPA Calculator -->
+    <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="100" data-category="java">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <h3>CGPA Calculator</h3>
+            <p class="project-badge">Academic</p>
+            <p class="project-preview">Java Swing based academic calculator for semester-wise and overall CGPA.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Java Swing based academic calculator to compute semester-wise and overall CGPA
+              with accurate grading logic.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Swing</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/CodeAlpha_CGPA_Calculator" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banking System -->
+    <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="200" data-category="database">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <h3>Banking System</h3>
+            <p class="project-badge">Backend</p>
+            <p class="project-preview">Secure banking application with deposit, withdrawal and transaction handling.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Console-based banking application supporting secure login, deposit,
+              withdrawal, balance enquiry and transaction handling.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">JDBC</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/CodeAlpha_LoginSystem" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AgriConnect -->
+    <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="300" data-category="web">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>AgriConnect</h3>
+            <p class="project-badge">Innovation</p>
+            <p class="project-preview">Agriculture support system to help farmers with crop information and resources.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Agriculture support system designed to help farmers with crop information,
+              resource management and basic data-driven assistance.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Database</span>
+              <span class="tech-tag">Web Basics</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/Agriconnect" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="certifications-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Certifications & Achievements</h2>
+    <p>Professional credentials and course completions</p>
+  </div>
+  
+  <div class="certifications-grid">
+    <!-- GU Prerequisite (DS using Java) -->
+    <div class="cert-card" data-aos="fade-up">
+      <span class="cert-badge new-badge">Latest</span>
+      <div class="cert-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3>GU Prerequisite (DS using Java)</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Data Structures fundamentals using Java</p>
+      <span class="cert-date">Jan 2026</span>
+      <p class="cert-id">ID: 067a18Xg7rw046p1k7</p>
+      <a href="images/certificates/GU%20Prerequisite%20(DS%20using%20Java)R1UC303B.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- DSA using C -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="cert-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3>DSA using C</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Data Structures and Algorithms implementation using C</p>
+      <span class="cert-date">Oct 2025</span>
+      <p class="cert-id">ID: 60RV55nlK787098dy1</p>
+      <a href="images/certificates/DS%20using%20C.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Mastering in SQL -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="cert-icon">
+        <i class="fas fa-database"></i>
+      </div>
+      <h3>Mastering in SQL</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Advanced SQL programming and database query optimization</p>
+      <span class="cert-date">Oct 2025</span>
+      <p class="cert-id">ID: 08gJ5Q91165819k72L</p>
+      <a href="images/certificates/Mastering%20in%20SQL.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Deloitte Australia - Data Analytics Job Simulation -->
+    <div class="cert-card" data-aos="fade-up">
+      <div class="cert-icon">
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <h3>Data Analytics Job Simulation</h3>
+      <p class="cert-issuer">Forage - Deloitte Australia</p>
+      <p class="cert-desc">Real-world data analytics simulation and practical experience</p>
+      <span class="cert-date">Dec 2025</span>
+      <p class="cert-id">ID: 69YiErEReWEhxm2SY</p>
+      <a href="images/certificates/Data%20Anaylsis.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Data Labeling Job Simulation -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="cert-icon">
+        <i class="fas fa-tag"></i>
+      </div>
+      <h3>Data Labeling Job Simulation</h3>
+      <p class="cert-issuer">Forage Academy</p>
+      <p class="cert-desc">Hands-on data labeling and annotation experience</p>
+      <span class="cert-date">Dec 2025</span>
+      <p class="cert-id">ID: MGKFNCLkKcSSuxQJJ</p>
+      <a href="images/certificates/Data%20Labeling.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Oracle Database Programming with SQL -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="cert-icon">
+        <i class="fas fa-database"></i>
+      </div>
+      <h3>Database Programming with SQL</h3>
+      <p class="cert-issuer">Oracle</p>
+      <p class="cert-desc">Oracle Database, Databases, SQL expertise</p>
+      <span class="cert-date">Nov 2025</span>
+      <a href="images/certificates/Oracle.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- AWS - Generative AI -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="150">
+      <div class="cert-icon">
+        <i class="fas fa-brain"></i>
+      </div>
+      <h3>Introduction to Generative AI</h3>
+      <p class="cert-issuer">Amazon Web Services (AWS)</p>
+      <p class="cert-desc">Artificial Intelligence, Generative AI fundamentals</p>
+      <span class="cert-date">Nov 2025</span>
+      <a href="images/certificates/Generative%20Ai.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Java Collections -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="cert-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3>Java Collections</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Advanced Java Collections framework and implementation</p>
+      <span class="cert-date">Sep 2025</span>
+      <p class="cert-id">ID: Z706n810959R5v46WO</p>
+      <a href="images/certificates/java%20collections.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Servlets & JSP -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="250">
+      <div class="cert-icon">
+        <i class="fas fa-globe"></i>
+      </div>
+      <h3>Servlets & JSP</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Java web development with Servlets and JSP technologies</p>
+      <span class="cert-date">Sep 2025</span>
+      <p class="cert-id">ID: 45t9LI8Qas47H37o91</p>
+      <a href="images/certificates/Servlet%20and%20jsp.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Design Thinking -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="cert-icon">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h3>Design Thinking - A Primer</h3>
+      <p class="cert-issuer">NPTEL</p>
+      <p class="cert-desc">Problem-solving and design thinking methodologies</p>
+      <span class="cert-date">Aug 2025</span>
+      <a href="images/certificates/Design%20Thinking.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Java for Beginners -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="350">
+      <div class="cert-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3>Java for Beginners</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Java fundamentals, OOP concepts, and core programming</p>
+      <span class="cert-date">May 2025</span>
+      <p class="cert-id">ID: lx519yX1qg86H74641</p>
+      <a href="images/certificates/java%20for%20beginner.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Object Oriented Programming -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="cert-icon">
+        <i class="fas fa-cube"></i>
+      </div>
+      <h3>Object Oriented Programming</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Advanced OOP principles and Java programming patterns</p>
+      <span class="cert-date">Apr 2025</span>
+      <p class="cert-id">ID: 44c7IF7J541637dp80</p>
+      <a href="images/certificates/object%20oriented%20programming.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Effective Leadership -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="450">
+      <div class="cert-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <h3>Effective Leadership</h3>
+      <p class="cert-issuer">HP</p>
+      <p class="cert-desc">Team Leadership and Leadership Development</p>
+      <span class="cert-date">Feb 2025</span>
+      <a href="images/certificates/leadership.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- ChatGPT for Everyone -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="cert-icon">
+        <i class="fas fa-robot"></i>
+      </div>
+      <h3>ChatGPT for Everyone</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">AI-powered conversational tools and ChatGPT applications</p>
+      <span class="cert-date">Jan 2025</span>
+      <p class="cert-id">ID: pWBd1633H928517M8b</p>
+      <a href="images/certificates/chatgpt%20for%20everyone.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Data Engineering and BigData -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="550">
+      <div class="cert-icon">
+        <i class="fas fa-chart-bar"></i>
+      </div>
+      <h3>Introduction to Data Engineering and BigData</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Big Data concepts, data pipelines, and engineering practices</p>
+      <span class="cert-date">Jan 2025</span>
+      <p class="cert-id">ID: 283N11D0GW278M73Bf</p>
+      <a href="images/certificates/Introduction%20to%20data%20enginerring.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Master Mentor Geo-Enabling -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="600">
+      <div class="cert-icon">
+        <i class="fas fa-map"></i>
+      </div>
+      <h3>Master Mentor Geo-Enabling Indian Scholars</h3>
+      <p class="cert-issuer">Esri - MMGEIS Program</p>
+      <p class="cert-desc">Geographic information systems and spatial technologies</p>
+      <span class="cert-date">Jan 2025</span>
+      <a href="images/certificates/MMGEIS.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Computational Thinking -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="650">
+      <div class="cert-icon">
+        <i class="fas fa-puzzle-piece"></i>
+      </div>
+      <h3>Computational Thinking</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">Algorithm design, problem decomposition, and logic</p>
+      <span class="cert-date">Dec 2024</span>
+      <p class="cert-id">ID: M6X7337259QtTL5611</p>
+      <a href="images/certificates/computational%20Thinking.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Programming in C# -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="700">
+      <div class="cert-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3>Programming in C#</h3>
+      <p class="cert-issuer">HCL GUVI</p>
+      <p class="cert-desc">C# programming language and .NET development</p>
+      <span class="cert-date">Dec 2024</span>
+      <p class="cert-id">ID: 180pD50Ra76v34BnJ3</p>
+      <a href="images/certificates/c%20programming.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- IELTS -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="750">
+      <div class="cert-icon">
+        <i class="fas fa-language"></i>
+      </div>
+      <h3>International English Language Testing System</h3>
+      <p class="cert-issuer">British Council IELTS</p>
+      <p class="cert-desc">English proficiency, ESL, and Communication skills</p>
+      <span class="cert-date">Nov 2023</span>
+      <a href="images/certificates/IELTS.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+
+    <!-- Cyber Safety -->
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="800">
+      <div class="cert-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Offences by & on Children in the Cyber Space</h3>
+      <p class="cert-issuer">CIET - NCERT</p>
+      <p class="cert-desc">Cybersecurity awareness and online child safety</p>
+      <span class="cert-date">Feb 2022</span>
+      <p class="cert-id">ID: ISEA/NCERT/OCCS/0004614</p>
+      <a href="images/certificates/children%20in%20cyber%20space.png" target="_blank" class="cert-link" title="View Certificate">
+        <i class="fas fa-image"></i> View Certificate
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="education-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Education</h2>
+    <p>My Academic Background</p>
+  </div>
+  <div class="timeline">
+    <!-- Galgotias University -->
+    <div class="timeline-item" data-aos="fade-right">
+      <div class="timeline-marker">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>Galgotias University</h3>
+          <span class="timeline-date">2024 - Present</span>
+        </div>
+        <p class="timeline-degree">B.Tech in Computer Science and Engineering</p>
+        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Greater Noida, India</p>
+        <p class="timeline-cgpa"><i class="fas fa-star"></i> CGPA: <strong>8.54</strong></p>
+        <div class="timeline-logo">
+          <img src="images/galgotias-logo.jpg" alt="Galgotias University">
+        </div>
+      </div>
+    </div>
+
+    <!-- Army Public School No.1 - Senior Secondary -->
+    <div class="timeline-item" data-aos="fade-left">
+      <div class="timeline-marker">
+        <i class="fas fa-book"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>Army Public School No.1 (CBSE)</h3>
+          <span class="timeline-date">2023</span>
+        </div>
+        <p class="timeline-degree">Senior Secondary (Class XII)</p>
+        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Roorkee, India</p>
+        <div class="timeline-logo">
+          <img src="images/aps-roorkee-logo.png" alt="Army Public School No.1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Army Public School No.1 - Secondary -->
+    <div class="timeline-item" data-aos="fade-right">
+      <div class="timeline-marker">
+        <i class="fas fa-book"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>Army Public School No.1 (CBSE)</h3>
+          <span class="timeline-date">2021</span>
+        </div>
+        <p class="timeline-degree">Secondary School (Class X)</p>
+        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Roorkee, India</p>
+        <div class="timeline-logo">
+          <img src="images/aps-roorkee-logo.png" alt="Army Public School No.1">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROFILES -->
+<section id="profiles" class="profiles-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Connect With Me</h2>
+    <p>Find me on various platforms</p>
+  </div>
+  <div class="profiles-grid">
+    <a href="https://github.com/shikhersingh" target="_blank" class="profile-card" data-aos="fade-up">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fab fa-github"></i></div>
+        <div class="profile-badge">Popular</div>
+      </div>
+      <h3>GitHub</h3>
+      <p class="profile-subtitle">Code Repositories</p>
+      <p class="profile-description">Check out my coding projects and contributions</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-code-branch"></i>
+          <span class="stat-label">Repositories</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-star"></i>
+          <span class="stat-label">Projects</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">Visit Profile</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://leetcode.com/u/OL0RC15YSR/" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fas fa-code"></i></div>
+        <div class="profile-badge">Active</div>
+      </div>
+      <h3>LeetCode</h3>
+      <p class="profile-subtitle">Problem Solving</p>
+      <p class="profile-description">Algorithm practice and competitive coding</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-trophy"></i>
+          <span class="stat-label">Problems Solved</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-fire"></i>
+          <span class="stat-label">Streaks</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">View Profile</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://www.geeksforgeeks.org/user/shikher24scx4nf/" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fas fa-book"></i></div>
+        <div class="profile-badge">Learning</div>
+      </div>
+      <h3>GeeksforGeeks</h3>
+      <p class="profile-subtitle">Learning Platform</p>
+      <p class="profile-description">Educational content and community contributions</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-pencil-alt"></i>
+          <span class="stat-label">Articles</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-users"></i>
+          <span class="stat-label">Followers</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">Explore</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/shikher-singh-" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="150">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fab fa-linkedin"></i></div>
+        <div class="profile-badge">Professional</div>
+      </div>
+      <h3>LinkedIn</h3>
+      <p class="profile-subtitle">Professional Network</p>
+      <p class="profile-description">Connect for professional opportunities and insights</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-handshake"></i>
+          <span class="stat-label">153 Connections</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-share"></i>
+          <span class="stat-label">50 Posts</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">Connect</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://www.guvi.in/shikher24scse101143289683" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="profile-badge">Certified</div>
+      </div>
+      <h3>GUVI</h3>
+      <p class="profile-subtitle">Skill Development</p>
+      <p class="profile-description">Comprehensive courses and certifications completed</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-book-open"></i>
+          <span class="stat-label">12 Courses</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-fire"></i>
+          <span class="stat-label">8950 Points</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">View Profile</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Let's Work Together</h2>
+    <p>Get in touch with me</p>
+  </div>
+  
+  <div class="contact-container" data-aos="zoom-in" data-aos-delay="100">
+    <!-- Contact Form -->
+    <div class="contact-form-wrapper">
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <span class="form-error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <span class="form-error" id="subjectError"></span>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          <span class="form-error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <a href="mailto:shikhersingh32286@email.com">shikhersingh32286@email.com</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>Greater Noida, India</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p>Available via LinkedIn</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="premium-footer">
+  <!-- Animated background elements -->
+  <div class="footer-bg-elements">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <div class="footer-container">
+    <!-- Brand Section -->
+    <div class="footer-section footer-brand" data-aos="fade-up">
+      <div class="brand-header">
+        <h3 class="brand-name">
+          <span class="gradient-text">Shikher Singh</span>
+        </h3>
+        <p class="brand-tagline">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+      </div>
+      <p class="brand-desc">Crafting digital solutions with passion and precision. Building the future, one line of code at a time.</p>
+      
+      <!-- Social Links -->
+      <div class="social-links-footer">
+        <a href="https://github.com/shikhersingh" target="_blank" class="social-link github" title="GitHub">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shikher-singh-" target="_blank" class="social-link linkedin" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://leetcode.com/u/OL0RC15YSR/" target="_blank" class="social-link leetcode" title="LeetCode">
+          <i class="fas fa-code"></i>
+          <span>LeetCode</span>
+        </a>
+        <a href="https://www.geeksforgeeks.org/user/shikher24scx4nf/" target="_blank" class="social-link gfg" title="GeeksforGeeks">
+          <i class="fas fa-book"></i>
+          <span>GFG</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="footer-section footer-links-section" data-aos="fade-up" data-aos-delay="100">
+      <h4 class="section-title">Quick Links</h4>
+      <nav class="footer-nav">
+        <a href="#home" class="footer-link">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#skills" class="footer-link">
+          <i class="fas fa-code"></i>
+          <span>Skills</span>
+        </a>
+        <a href="#projects" class="footer-link">
+          <i class="fas fa-project-diagram"></i>
+          <span>Projects</span>
+        </a>
+        <a href="#certifications" class="footer-link">
+          <i class="fas fa-certificate"></i>
+          <span>Certifications</span>
+        </a>
+        <a href="#contact" class="footer-link">
+          <i class="fas fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Services Section -->
+    <div class="footer-section footer-services" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="section-title">Expertise</h4>
+      <ul class="services-list">
+        <li><i class="fas fa-check-circle"></i> Backend Development</li>
+        <li><i class="fas fa-check-circle"></i> Database Design</li>
+        <li><i class="fas fa-check-circle"></i> Frontend UI/UX</li>
+        <li><i class="fas fa-check-circle"></i> Problem Solving</li>
+        <li><i class="fas fa-check-circle"></i> Code Optimization</li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-section footer-contact" data-aos="fade-up" data-aos-delay="300">
+      <h4 class="section-title">Get In Touch</h4>
+      <div class="contact-method">
+        <a href="#contact" class="contact-btn">
+          <i class="fas fa-envelope"></i>
+          <span>Send Message</span>
+        </a>
+      </div>
+      <div class="contact-info">
+        <p class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Greater Noida, India</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="footer-divider"></div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <div class="copyright">
+      <p>&copy; <span id="year">2025</span> Shikher Singh. All rights reserved.</p>
+      <p class="made-with">Made with <i class="fas fa-heart pulse"></i> and <i class="fas fa-coffee"></i></p>
+    </div>
+    
+    <div class="footer-credits">
+      <a href="#top" class="back-to-top">
+        <span>Back to Top</span>
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/neon-waves.js"></script>
+<script src="js/enhanced-three-scenes.js"></script>
+<script src="js/scroll-animations.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1200 });</script>
+
+</body>
+</html>
+
+
