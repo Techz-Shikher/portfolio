@@ -7,6 +7,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -21,8 +22,14 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 </head>
 <body>
+
+<!-- 3D Background Container (Low Z-index) -->
+<div id="three-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
 
 <header>
   <!-- Scroll Progress Bar -->
@@ -52,11 +59,8 @@
   </div>
 </header>
 
-<!-- 3D Hero Background Canvas -->
-<canvas id="hero3DCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;"></canvas>
-
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero" id="home" style="position: relative; z-index: 1;">
   <div class="hero-content">
     <div class="hero-greeting" data-aos="fade-up">
       <p>Welcome to my portfolio</p>
@@ -74,7 +78,7 @@
         <i class="fas fa-arrow-right"></i>
         View Projects
       </a>
-      <a href="resume/RESUME.pdf" class="btn btn-secondary" download>
+      <a href="/resume/RESUME.pdf" class="btn btn-secondary" download>
         <i class="fas fa-download"></i>
         Resume
       </a>
@@ -88,8 +92,124 @@
     </div>
   </div>
 </section>
+
+<!-- ABOUT ME -->
+<section id="about" class="about-section">
+  <!-- Animated background elements -->
+  <div class="about-bg-elements">
+    <div class="glow-orb about-orb-1"></div>
+    <div class="glow-orb about-orb-2"></div>
+  </div>
+
+  <div class="section-header" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Get to know the developer behind the code</p>
+  </div>
+
+  <div class="about-container">
+    <!-- About Content -->
+    <div class="about-content" data-aos="fade-right">
+      <div class="about-card">
+        <h3 class="about-title">Who I Am</h3>
+        <p class="about-text">
+          I'm a passionate <strong>Full Stack Developer</strong> from Greater Noida, India, currently pursuing B.Tech in Computer Science & Engineering at Galgotias University. With a CGPA of 8.54, I'm committed to excellence in both academics and practical development.
+        </p>
+        <p class="about-text">
+          I specialize in building <strong>scalable backend systems</strong>, crafting <strong>intuitive user interfaces</strong>, and solving <strong>complex algorithmic problems</strong>. My journey in tech has been driven by curiosity, continuous learning, and a passion for creating solutions that matter.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <h3 class="about-title">What I Do</h3>
+        <p class="about-text">
+          I develop <strong>end-to-end applications</strong> using modern technologies. From designing robust databases to creating responsive frontends, I bring ideas to life with clean, maintainable code. I'm particularly interested in backend optimization, system design, and building real-world applications.
+        </p>
+        <p class="about-text">
+          Beyond coding, I actively contribute to the developer community, solve algorithmic challenges on LeetCode, and continuously expand my technical expertise through certifications and hands-on projects.
+        </p>
+      </div>
+
+      <div class="about-stats">
+        <div class="about-stat" data-aos="zoom-in" data-aos-delay="0">
+          <div class="stat-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">4+</div>
+            <div class="stat-name">Projects</div>
+          </div>
+        </div>
+        <div class="about-stat" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">17+</div>
+            <div class="stat-name">Certifications</div>
+          </div>
+        </div>
+        <div class="about-stat" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">8.54</div>
+            <div class="stat-name">CGPA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cta" data-aos="fade-up" data-aos-delay="300">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-project-diagram"></i>
+          Explore My Work
+        </a>
+        <a href="/resume/RESUME.pdf" class="btn btn-secondary" download>
+          <i class="fas fa-file-pdf"></i>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- About Highlights -->
+    <div class="about-highlights" data-aos="fade-left">
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h4>Full Stack Development</h4>
+        <p>Backend with Java, Frontend with modern frameworks, Database optimization</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-puzzle-piece"></i>
+        </div>
+        <h4>Problem Solving</h4>
+        <p>DSA expertise, algorithmic thinking, competitive coding practice</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h4>Innovation & Growth</h4>
+        <p>Continuous learning, exploring new technologies, building impactful projects</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h4>Community Contributor</h4>
+        <p>Active on GitHub, LeetCode, and GeeksforGeeks, sharing knowledge</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY (FEATURED) -->
-<section id="gallery" class="gallery-section gallery-featured">
+<section id="gallery" class="gallery-section gallery-featured" style="position: relative; z-index: 2;">
   <div class="section-header" data-aos="fade-up">
     <h2>Gallery</h2>
     <p>Visual showcase of projects and achievements</p>
@@ -128,7 +248,7 @@
   </div>
 </section>
 <!-- STATS SECTION -->
-<section class="stats-section">
+<section class="stats-section" style="position: relative; z-index: 2;">
   <div class="stats-container">
     <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
       <div class="stat-number" data-target="15">4</div>
@@ -146,10 +266,7 @@
   </div>
 </section>
 
-<!-- PARTICLE BACKGROUND -->
-<canvas id="particleCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
-
-<section id="skills" class="skills-section">
+<section id="skills" class="skills-section" style="position: relative; z-index: 2;">
   <div class="section-header" data-aos="fade-up">
     <h2>Technical Skills</h2>
     <p>Technologies and tools I work with</p>
@@ -208,6 +325,52 @@
     <h3 class="carousel-title">Tech Stack Specialization</h3>
     <div class="carousel-container">
       <div class="carousel-track">
+        <!-- First Set -->
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-java"></i></div>
+          <span>Core Java</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-database"></i></div>
+          <span>JDBC</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-server"></i></div>
+          <span>Servlets</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-globe"></i></div>
+          <span>JSP</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-database"></i></div>
+          <span>MySQL</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-html5"></i></div>
+          <span>HTML5</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-css3-alt"></i></div>
+          <span>CSS3</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fab fa-js-square"></i></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-layer-group"></i></div>
+          <span>UI</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <span>UX</span>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-icon"><i class="fas fa-desktop"></i></div>
+          <span>Interface</span>
+        </div>
+        <!-- Duplicate Set for Seamless Loop -->
         <div class="carousel-item">
           <div class="carousel-icon"><i class="fab fa-java"></i></div>
           <span>Core Java</span>
@@ -254,10 +417,6 @@
         </div>
       </div>
     </div>
-    <div class="carousel-nav">
-      <button class="carousel-btn prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
-      <button class="carousel-btn next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
-    </div>
   </div>
 </section>
 
@@ -270,100 +429,160 @@
 
   <!-- Project Filter -->
   <div class="project-filters" data-aos="fade-up">
-    <button class="filter-btn active" data-filter="all">All Projects</button>
-    <button class="filter-btn" data-filter="java">Java</button>
-    <button class="filter-btn" data-filter="web">Web</button>
-    <button class="filter-btn" data-filter="database">Database</button>
+    <button class="filter-btn active" data-filter="all">
+      <i class="fas fa-th"></i>
+      <span>All Projects</span>
+    </button>
+    <button class="filter-btn" data-filter="java">
+      <i class="fas fa-coffee"></i>
+      <span>Java</span>
+    </button>
+    <button class="filter-btn" data-filter="web">
+      <i class="fas fa-globe"></i>
+      <span>Web</span>
+    </button>
+    <button class="filter-btn" data-filter="database">
+      <i class="fas fa-database"></i>
+      <span>Database</span>
+    </button>
   </div>
 
   <div class="project-grid">
 
     <!-- MedConnect (MAIN) -->
-    <div class="project-card" data-aos="fade-up" data-category="java">
-      <div class="project-header">
-        <i class="fas fa-hospital-user"></i>
-        <span class="project-date">Main Project</span>
-      </div>
-      <h3>MedConnect</h3>
-      <p>
-        Complete Hospital Management System with Admin, Doctor & Patient login,
-        appointment scheduling, billing, room and ambulance management.
-      </p>
-      <div class="tech-stack">
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">Swing</span>
-        <span class="tech-tag">JDBC</span>
-        <span class="tech-tag">MySQL</span>
-      </div>
-      <div class="project-actions">
-        <a href="https://github.com/Techz-Shikher/MedConnect-1" target="_blank" class="project-btn">
-          <i class="fab fa-github"></i> View Code
-        </a>
+    <div class="project-card-wrapper" data-aos="fade-up" data-category="java">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-hospital-user"></i>
+            </div>
+            <h3>MedConnect</h3>
+            <p class="project-badge">Main Project</p>
+            <p class="project-preview">Complete Hospital Management System with Admin, Doctor & Patient login.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Complete Hospital Management System with Admin, Doctor & Patient login,
+              appointment scheduling, billing, room and ambulance management.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Swing</span>
+              <span class="tech-tag">JDBC</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/MedConnect-1" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- CGPA Calculator -->
-    <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="java">
-      <div class="project-header">
-        <i class="fas fa-calculator"></i>
-        <span class="project-date">Academic</span>
-      </div>
-      <h3>CGPA Calculator</h3>
-      <p>
-        Java Swing based academic calculator to compute semester-wise and overall CGPA
-        with accurate grading logic.
-      </p>
-      <div class="tech-stack">
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">Swing</span>
-      </div>
-      <div class="project-actions">
-        <a href="https://github.com/Techz-Shikher/CodeAlpha_CGPA_Calculator" target="_blank" class="project-btn">
-          <i class="fab fa-github"></i> View Code
-        </a>
+    <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="100" data-category="java">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <h3>CGPA Calculator</h3>
+            <p class="project-badge">Academic</p>
+            <p class="project-preview">Java Swing based academic calculator for semester-wise and overall CGPA.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Java Swing based academic calculator to compute semester-wise and overall CGPA
+              with accurate grading logic.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Swing</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/CodeAlpha_CGPA_Calculator" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Banking System -->
-    <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="database">
-      <div class="project-header">
-        <i class="fas fa-university"></i>
-        <span class="project-date">Backend</span>
+    <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="200" data-category="database">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <h3>Banking System</h3>
+            <p class="project-badge">Backend</p>
+            <p class="project-preview">Secure banking application with deposit, withdrawal and transaction handling.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Console-based banking application supporting secure login, deposit,
+              withdrawal, balance enquiry and transaction handling.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">JDBC</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/CodeAlpha_LoginSystem" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Details
+            </a>
+          </div>
+        </div>
       </div>
-      <h3>Banking System</h3>
-      <p>
-        Console-based banking application supporting secure login, deposit,
-        withdrawal, balance enquiry and transaction handling.
-      </p>
-      <div class="tech-stack">
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">JDBC</span>
-        <span class="tech-tag">MySQL</span>
-      </div>
-      <a href="https://github.com/Techz-Shikher/CodeAlpha_LoginSystem" target="_blank" class="project-link">
-        View Details <i class="fas fa-arrow-right"></i>
-      </a>
     </div>
 
     <!-- AgriConnect -->
-    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="project-header">
-        <i class="fas fa-seedling"></i>
-        <span class="project-date">Innovation</span>
+    <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="300" data-category="web">
+      <div class="project-card">
+        <div class="card-inner">
+          <!-- Front of card -->
+          <div class="card-front">
+            <div class="project-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>AgriConnect</h3>
+            <p class="project-badge">Innovation</p>
+            <p class="project-preview">Agriculture support system to help farmers with crop information and resources.</p>
+            <div class="hover-hint">Hover to see details</div>
+          </div>
+          
+          <!-- Back of card -->
+          <div class="card-back">
+            <p>
+              Agriculture support system designed to help farmers with crop information,
+              resource management and basic data-driven assistance.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Database</span>
+              <span class="tech-tag">Web Basics</span>
+            </div>
+            <a href="https://github.com/Techz-Shikher/Agriconnect" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> View Details
+            </a>
+          </div>
+        </div>
       </div>
-      <h3>AgriConnect</h3>
-      <p>
-        Agriculture support system designed to help farmers with crop information,
-        resource management and basic data-driven assistance.
-      </p>
-      <div class="tech-stack">
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">Database</span>
-        <span class="tech-tag">Web Basics</span>
-      </div>
-      <a href="https://github.com/Techz-Shikher/Agriconnect" target="_blank" class="project-link">
-        View Details <i class="fas fa-arrow-right"></i>
-      </a>
     </div>
 
   </div>
@@ -379,10 +598,11 @@
   <div class="certifications-grid">
     <!-- GU Prerequisite (DS using Java) -->
     <div class="cert-card" data-aos="fade-up">
+      <span class="cert-badge new-badge">Latest</span>
       <div class="cert-icon">
         <i class="fas fa-code"></i>
       </div>
-      <h3>GU Prerequisite (DS using Java) - R1UC303B</h3>
+      <h3>GU Prerequisite (DS using Java)</h3>
       <p class="cert-issuer">HCL GUVI</p>
       <p class="cert-desc">Data Structures fundamentals using Java</p>
       <span class="cert-date">Jan 2026</span>
@@ -745,40 +965,123 @@
     <p>Find me on various platforms</p>
   </div>
   <div class="profiles-grid">
-    <a href="https://github.com/shikhersingh" target="_blank" class="profile-card" data-aos="fade-up" data-stats='{"followers": 120, "repos": 45}'>
-      <div class="profile-icon"><i class="fab fa-github"></i></div>
+    <a href="https://github.com/shikhersingh" target="_blank" class="profile-card" data-aos="fade-up">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fab fa-github"></i></div>
+        <div class="profile-badge">Popular</div>
+      </div>
       <h3>GitHub</h3>
-      <p>Check out my code repositories</p>
-      
-    </a>
-    <a href="https://leetcode.com/u/OL0RC15YSR/" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="50" data-stats='{"solved": 180, "ranking": 2500}'>
-      <div class="profile-icon"><i class="fas fa-code"></i></div>
-      <h3>LeetCode</h3>
-      <p>Problem solving & algorithms</p>
-      
-    </a>
-    <a href="https://www.geeksforgeeks.org/user/shikher24scx4nf/" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="100" data-stats='{"articles": 15, "followers": 350}'>
-      <div class="profile-icon"><i class="fas fa-book"></i></div>
-      <h3>GeeksforGeeks</h3>
-      <p>Learning & contributions</p>
-      
-    </a>
-    <a href="https://www.linkedin.com/in/shikher-singh-" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="150" data-stats='{"connections": 520, "posts": 28}'>
-      <div class="profile-icon"><i class="fab fa-linkedin"></i></div>
-      <h3>LinkedIn</h3>
-      <p>Professional networking</p>
+      <p class="profile-subtitle">Code Repositories</p>
+      <p class="profile-description">Check out my coding projects and contributions</p>
       <div class="profile-stats">
-        <span class="stat"><i class="fas fa-handshake"></i> 130 Connections</span>
-        <span class="stat"><i class="fas fa-share"></i> 40 Posts</span>
+        <span class="stat-item">
+          <i class="fas fa-code-branch"></i>
+          <span class="stat-label">Repositories</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-star"></i>
+          <span class="stat-label">Projects</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">Visit Profile</span>
+        <i class="fas fa-arrow-right"></i>
       </div>
     </a>
-    <a href="https://www.guvi.in/shikher24scse101143289683" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="200" data-stats='{"courses": 12, "score": 8950}'>
-      <div class="profile-icon"><i class="fas fa-graduation-cap"></i></div>
-      <h3>GUVI</h3>
-      <p>Learning & skill development</p>
+
+    <a href="https://leetcode.com/u/OL0RC15YSR/" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fas fa-code"></i></div>
+        <div class="profile-badge">Active</div>
+      </div>
+      <h3>LeetCode</h3>
+      <p class="profile-subtitle">Problem Solving</p>
+      <p class="profile-description">Algorithm practice and competitive coding</p>
       <div class="profile-stats">
-        <span class="stat"><i class="fas fa-book"></i> 12 Courses</span>
-        <span class="stat"><i class="fas fa-fire"></i> 8950 Points</span>
+        <span class="stat-item">
+          <i class="fas fa-trophy"></i>
+          <span class="stat-label">Problems Solved</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-fire"></i>
+          <span class="stat-label">Streaks</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">View Profile</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://www.geeksforgeeks.org/user/shikher24scx4nf/" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fas fa-book"></i></div>
+        <div class="profile-badge">Learning</div>
+      </div>
+      <h3>GeeksforGeeks</h3>
+      <p class="profile-subtitle">Learning Platform</p>
+      <p class="profile-description">Educational content and community contributions</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-pencil-alt"></i>
+          <span class="stat-label">Articles</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-users"></i>
+          <span class="stat-label">Followers</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">Explore</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/shikher-singh-" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="150">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fab fa-linkedin"></i></div>
+        <div class="profile-badge">Professional</div>
+      </div>
+      <h3>LinkedIn</h3>
+      <p class="profile-subtitle">Professional Network</p>
+      <p class="profile-description">Connect for professional opportunities and insights</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-handshake"></i>
+          <span class="stat-label">153 Connections</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-share"></i>
+          <span class="stat-label">50 Posts</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">Connect</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="https://www.guvi.in/shikher24scse101143289683" target="_blank" class="profile-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="profile-header">
+        <div class="profile-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="profile-badge">Certified</div>
+      </div>
+      <h3>GUVI</h3>
+      <p class="profile-subtitle">Skill Development</p>
+      <p class="profile-description">Comprehensive courses and certifications completed</p>
+      <div class="profile-stats">
+        <span class="stat-item">
+          <i class="fas fa-book-open"></i>
+          <span class="stat-label">12 Courses</span>
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-fire"></i>
+          <span class="stat-label">8950 Points</span>
+        </span>
+      </div>
+      <div class="profile-action">
+        <span class="action-text">View Profile</span>
+        <i class="fas fa-arrow-right"></i>
       </div>
     </a>
 </div>
@@ -839,21 +1142,126 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2025 Shikher Singh. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+<footer class="premium-footer">
+  <!-- Animated background elements -->
+  <div class="footer-bg-elements">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <div class="footer-container">
+    <!-- Brand Section -->
+    <div class="footer-section footer-brand" data-aos="fade-up">
+      <div class="brand-header">
+        <h3 class="brand-name">
+          <span class="gradient-text">Shikher Singh</span>
+        </h3>
+        <p class="brand-tagline">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+      </div>
+      <p class="brand-desc">Crafting digital solutions with passion and precision. Building the future, one line of code at a time.</p>
+      
+      <!-- Social Links -->
+      <div class="social-links-footer">
+        <a href="https://github.com/shikhersingh" target="_blank" class="social-link github" title="GitHub">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shikher-singh-" target="_blank" class="social-link linkedin" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://leetcode.com/u/OL0RC15YSR/" target="_blank" class="social-link leetcode" title="LeetCode">
+          <i class="fas fa-code"></i>
+          <span>LeetCode</span>
+        </a>
+        <a href="https://www.geeksforgeeks.org/user/shikher24scx4nf/" target="_blank" class="social-link gfg" title="GeeksforGeeks">
+          <i class="fas fa-book"></i>
+          <span>GFG</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="footer-section footer-links-section" data-aos="fade-up" data-aos-delay="100">
+      <h4 class="section-title">Quick Links</h4>
+      <nav class="footer-nav">
+        <a href="#home" class="footer-link">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#skills" class="footer-link">
+          <i class="fas fa-code"></i>
+          <span>Skills</span>
+        </a>
+        <a href="#projects" class="footer-link">
+          <i class="fas fa-project-diagram"></i>
+          <span>Projects</span>
+        </a>
+        <a href="#certifications" class="footer-link">
+          <i class="fas fa-certificate"></i>
+          <span>Certifications</span>
+        </a>
+        <a href="#contact" class="footer-link">
+          <i class="fas fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Services Section -->
+    <div class="footer-section footer-services" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="section-title">Expertise</h4>
+      <ul class="services-list">
+        <li><i class="fas fa-check-circle"></i> Backend Development</li>
+        <li><i class="fas fa-check-circle"></i> Database Design</li>
+        <li><i class="fas fa-check-circle"></i> Frontend UI/UX</li>
+        <li><i class="fas fa-check-circle"></i> Problem Solving</li>
+        <li><i class="fas fa-check-circle"></i> Code Optimization</li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-section footer-contact" data-aos="fade-up" data-aos-delay="300">
+      <h4 class="section-title">Get In Touch</h4>
+      <div class="contact-method">
+        <a href="#contact" class="contact-btn">
+          <i class="fas fa-envelope"></i>
+          <span>Send Message</span>
+        </a>
+      </div>
+      <div class="contact-info">
+        <p class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Greater Noida, India</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="footer-divider"></div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <div class="copyright">
+      <p>&copy; <span id="year">2025</span> Shikher Singh. All rights reserved.</p>
+      <p class="made-with">Made with <i class="fas fa-heart pulse"></i> and <i class="fas fa-coffee"></i></p>
+    </div>
+    
+    <div class="footer-credits">
+      <a href="#top" class="back-to-top">
+        <span>Back to Top</span>
+        <i class="fas fa-arrow-up"></i>
+      </a>
     </div>
   </div>
 </footer>
 
 <script src="js/script.js"></script>
 <script src="js/neon-waves.js"></script>
+<script src="js/enhanced-three-scenes.js"></script>
+<script src="js/scroll-animations.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1200 });</script>
 
