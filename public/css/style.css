@@ -9,23 +9,7 @@
 }
 
 :root {
-  /* Light Theme (Default) */
-  --primary-color: #0066ff;
-  --secondary-color: #00aaff;
-  --accent-color: #ff0088;
-  --dark-bg: #ffffff;
-  --card-bg: #f5f7fa;
-  --text-primary: #1a1a2e;
-  --text-secondary: #555577;
-  --border-color: #e0e5f0;
-  --transition: all 0.3s ease;
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --glow-color: rgba(0, 102, 255, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Dark Theme */
-[data-theme="dark"] {
+  /* Dark Theme (Default - Only Theme) */
   --primary-color: #00ff88;
   --secondary-color: #00ffff;
   --accent-color: #ff00ff;
@@ -34,6 +18,7 @@
   --text-primary: #ffffff;
   --text-secondary: #b0b8d4;
   --border-color: #2a3050;
+  --transition: all 0.3s ease;
   --header-bg: rgba(10, 14, 39, 0.95);
   --glow-color: rgba(0, 255, 136, 0.1);
   --shadow-color: rgba(0, 255, 136, 0.1);
@@ -130,7 +115,7 @@ header {
   height: 45px;
   border-radius: 50%;
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
