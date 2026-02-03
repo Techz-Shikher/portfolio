@@ -1546,6 +1546,35 @@ header {
   box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4);
 }
 
+/* Project Status Indicator */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.status-indicator.completed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.status-indicator.ongoing {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+}
+
+.status-indicator i {
+  font-size: 0.7rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
 .project-image {
   width: 100%;
   height: 200px;
