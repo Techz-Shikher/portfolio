@@ -30,5 +30,40 @@ document.addEventListener('DOMContentLoaded', function() {
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
+
+  // Certificates Modal Handler
+  const modal = document.getElementById('certificatesModal');
+  const viewAllBtn = document.getElementById('viewAllCertsBtn');
+  const closeBtn = document.getElementById('closeCertsModal');
+
+  if (viewAllBtn && modal) {
+    // Open modal
+    viewAllBtn.addEventListener('click', function() {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  }
 });
 
