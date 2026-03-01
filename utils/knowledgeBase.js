@@ -96,6 +96,39 @@ const knowledgeBase = {
 
   certifications: [
     {
+      name: "Tata - Cybersecurity Analyst Job Simulation",
+      issuer: "Forage",
+      date: "Feb 2026",
+      description: "Cybersecurity analysis, threat detection, and incident response"
+    },
+    {
+      name: "Introduction to Generative AI",
+      issuer: "IBM",
+      date: "Feb 2026",
+      description: "Generative AI development, AI models, and machine learning fundamentals"
+    },
+    {
+      name: "Certificate of Participation in HackLoop 2025",
+      issuer: "Unstop",
+      date: "Jan 2026",
+      description: "Hackathon participation and collaborative coding challenges"
+    },
+    {
+      name: "GU Prerequisite (Data Structures using Java)",
+      issuer: "HCL GUVI",
+      date: "Jan 2026"
+    },
+    {
+      name: "DSA using C",
+      issuer: "HCL GUVI",
+      date: "Oct 2025"
+    },
+    {
+      name: "Mastering in SQL",
+      issuer: "HCL GUVI",
+      date: "Oct 2025"
+    },
+    {
       name: "Advanced SQL Concepts",
       issuer: "HackerEarth"
     },
@@ -141,6 +174,11 @@ Framework Knowledge: ${knowledgeBase.skills.frameworks.join(", ")}
 MAIN PROJECTS:
 ${knowledgeBase.projects.map(p => 
   `- ${p.name} (${p.status}): ${p.description}\n  Tech: ${p.tech.join(", ")}\n  Link: ${p.github || "Portfolio only"}`
+).join("\n")}
+
+LATEST CERTIFICATIONS:
+${knowledgeBase.certifications.slice(0, 10).map(c => 
+  `- ${c.name} from ${c.issuer}${c.date ? ` (${c.date})` : ""}`
 ).join("\n")}
 
 CURRENT ROLE:
