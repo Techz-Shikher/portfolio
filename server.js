@@ -23,6 +23,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// API Config endpoint for frontend
+app.get('/api/config', (req, res) => {
+  res.json({
+    apiUrl: process.env.CHATBOT_API_URL || '/api/chatbot'
+  });
+});
+
 // Contact Form Endpoint
 app.post('/api/contact', async (req, res) => {
   try {

@@ -8,6 +8,8 @@ class AvatarChatbot {
     this.camera = null;
     this.renderer = null;
     this.avatar = null;
+    // Use environment variable or local API
+    this.apiUrl = window.CHATBOT_API_URL || '/api/chatbot';
     this.init();
   }
 
@@ -94,46 +96,73 @@ class AvatarChatbot {
 
   initThreeJsScene() {
     const container = document.getElementById('avatarContainer');
-    if (!container) return;
+    if (!container) {
+      console.warn('Avatar container not found');
+      return;
+    }
 
-    // Scene setup
-    this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(
-      75,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      1000
-    );
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    this.renderer.setSize(container.clientWidth, container.clientHeight);
-    this.renderer.setClearColor(0x000000, 0);
-    container.appendChild(this.renderer.domElement);
-
-    // Create simple avatar
-    this.createAvatarMesh();
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    this.scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(5, 5, 5);
-    this.scene.add(directionalLight);
-
-    this.camera.position.z = 3;
-
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      if (this.avatar) {
-        this.avatar.rotation.y += 0.005;
+    try {
+      // Check if WebGL is supported
+      if (!window.THREE) {
+        console.error('Three.js is not loaded');
+        return;
       }
-      this.renderer.render(this.scene, this.camera);
-    };
-    animate();
 
-    // Handle window resize
-    window.addEventListener('resize', () => this.onWindowResize());
+      // Scene setup
+      this.scene = new THREE.Scene();
+      
+      // Get container dimensions with fallback
+      const width = container.clientWidth || 50;
+      const height = container.clientHeight || 50;
+
+      this.camera = new THREE.PerspectiveCamera(
+        75,
+        width / height,
+        0.1,
+        1000
+      );
+      
+      this.renderer = new THREE.WebGLRenderer({ 
+        antialias: true, 
+        alpha: true,
+        powerPreference: 'low-power'
+      });
+      this.renderer.setSize(width, height);
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      this.renderer.setClearColor(0x000000, 0);
+      
+      // Clear container first
+      container.innerHTML = '';
+      container.appendChild(this.renderer.domElement);
+
+      // Create simple avatar
+      this.createAvatarMesh();
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      this.scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight.position.set(5, 5, 5);
+      this.scene.add(directionalLight);
+
+      this.camera.position.z = 3;
+
+      // Animation loop
+      const animate = () => {
+        requestAnimationFrame(animate);
+        if (this.avatar) {
+          this.avatar.rotation.y += 0.005;
+        }
+        this.renderer.render(this.scene, this.camera);
+      };
+      animate();
+
+      // Handle window resize
+      window.addEventListener('resize', () => this.onWindowResize());
+    } catch (error) {
+      console.error('Error initializing Three.js scene:', error);
+    }
   }
 
   createAvatarMesh() {
@@ -206,8 +235,11 @@ class AvatarChatbot {
     this.showTypingIndicator();
 
     try {
-      // Send to backend
-      const response = await fetch('/api/chatbot', {
+      // Send to backend with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+      const response = await fetch(this.apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -215,8 +247,15 @@ class AvatarChatbot {
         body: JSON.stringify({
           message: message,
           conversationHistory: this.messages
-        })
+        }),
+        signal: controller.signal
       });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
 
       const data = await response.json();
       
@@ -226,13 +265,21 @@ class AvatarChatbot {
       // Add bot response to UI
       if (data.response) {
         this.addMessageToUI(data.response, 'bot');
+      } else if (data.error) {
+        this.addMessageToUI(`Error: ${data.error}`, 'bot');
       } else {
         this.addMessageToUI('Sorry, I encountered an error. Please try again.', 'bot');
       }
     } catch (error) {
       console.error('Chat error:', error);
       this.removeTypingIndicator();
-      this.addMessageToUI('Sorry, I couldn\'t process your message. Please try again.', 'bot');
+      
+      // Provide helpful error message
+      if (error.name === 'AbortError') {
+        this.addMessageToUI('Request timed out. Please try again.', 'bot');
+      } else {
+        this.addMessageToUI('Sorry, I couldn\'t process your message. Please check your connection and try again.', 'bot');
+      }
     }
 
     this.isLoading = false;
@@ -297,6 +344,17 @@ class AvatarChatbot {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Fetch API config from server
+    const configResponse = await fetch('/api/config');
+    const config = await configResponse.json();
+    window.CHATBOT_API_URL = config.apiUrl;
+  } catch (error) {
+    console.warn('Could not load config, using default API URL', error);
+    window.CHATBOT_API_URL = '/api/chatbot';
+  }
+  
+  // Initialize chatbot
   window.avatarChatbot = new AvatarChatbot();
 });
